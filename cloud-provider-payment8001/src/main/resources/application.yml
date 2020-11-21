@@ -1,0 +1,19 @@
+server:
+  port: 8001
+
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db2020?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 812672380
+#  &useSSL=false
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.ysu.springcloud.entities
+
+
