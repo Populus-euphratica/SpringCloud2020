@@ -14,7 +14,7 @@
 </select>
 
     <insert id="insert" parameterType="com.ysu.springcloud.entitles.Payment" useGeneratedKeys="true" keyProperty="id">
-        insert into payment (id,serial) values (#{id},#{serial});
+        insert into payment (serial) values (#{serial});
     </insert>
 
 </mapper>
