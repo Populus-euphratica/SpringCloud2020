@@ -10,19 +10,19 @@ import javax.annotation.Resource;
 
 @RestController
 @Slf4j
-@RequestMapping("/customer/payment")
+@RequestMapping("/consumer/payment")
 public class OrderController {
-    public static final String PAYMENT_URL="http://localhost:8001/payment/";
+    public static final String PAYMENT_URL="http://CLOUD-PAYMENT-SERVICE/payment/";
     @Resource
     private RestTemplate restTemplate;
 
     @GetMapping("/id")
-    public CommonResult<Payment> selectById(@RequestParam int id){
+    public CommonResult selectById(@RequestParam int id){
         return restTemplate.getForObject(PAYMENT_URL+"id?id="+id,CommonResult.class);
     }
 
     @GetMapping("/")
-    public CommonResult<Payment> insert(Payment payment){
+    public CommonResult insert(Payment payment){
         return restTemplate.postForObject(PAYMENT_URL,payment,CommonResult.class);
     }
 }
