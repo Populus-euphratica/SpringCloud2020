@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommonResult<T> {
+public class CommonResult {
     private int code;
     private String message;
-    private T data;
+    private Object data;
 }
