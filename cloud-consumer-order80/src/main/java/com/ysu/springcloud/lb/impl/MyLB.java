@@ -1,6 +1,6 @@
 package com.ysu.springcloud.lb.impl;
 
-import com.ysu.springcloud.lb.LoadBalancer;
+import com.ysu.springcloud.lb.LoadBalancerabc;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 @Component
-public class MyLB implements LoadBalancer {
+public class MyLB implements LoadBalancerabc {
     private AtomicInteger atomicInteger=new AtomicInteger(0);
 
     @Override

@@ -2,9 +2,8 @@ package com.ysu.springcloud.controller;
 
 import com.ysu.springcloud.entitles.CommonResult;
 import com.ysu.springcloud.entitles.Payment;
-import com.ysu.springcloud.lb.LoadBalancer;
+import com.ysu.springcloud.lb.LoadBalancerabc;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -13,7 +12,6 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import java.net.URI;
-import java.net.URL;
 import java.util.List;
 
 @RestController
@@ -24,7 +22,7 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
     @Autowired
-    private LoadBalancer loadBalancer;
+    private LoadBalancerabc loadBalancer;
     @Autowired
     private DiscoveryClient discoveryClient;
     @GetMapping("/id")
