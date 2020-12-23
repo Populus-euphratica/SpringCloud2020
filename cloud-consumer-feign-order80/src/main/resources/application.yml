@@ -9,4 +9,8 @@ ribbon:
   ReadTimeout:  5000
 #  ConnectTimeout: 5000
 
+logging:
+  level:
+    com.ysu.springcloud.service.PaymentFeignService: debug
+
 
