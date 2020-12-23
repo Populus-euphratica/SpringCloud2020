@@ -11,4 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface PaymentFeignService {
     @GetMapping("/payment/id")
     public CommonResult selectById(@RequestParam(name = "id") int id);
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout();
 }
