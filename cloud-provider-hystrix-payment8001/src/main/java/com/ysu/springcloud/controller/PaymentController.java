@@ -42,4 +42,14 @@ public class PaymentController {
         return "8001 调用支付接口异常！！！";
     }
 
+
+    //===服务熔断
+    @GetMapping("/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id){
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("*******result:"+result);
+        return result;
+    }
+
+
 }

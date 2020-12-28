@@ -1,5 +1,7 @@
 package com.ysu.springcloud.service;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 public interface PaymentService {
 
 
@@ -8,4 +10,7 @@ public interface PaymentService {
 
     //失败
     public String paymentInfo_TimeOut(Integer id);
+
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id);
+    public String paymentCircuitBreaker_fallback(@PathVariable("id") Integer id);
 }
