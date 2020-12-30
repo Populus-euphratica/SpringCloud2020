@@ -15,7 +15,7 @@ import java.util.UUID;
 public class MessageProvider implements IMessageProvider {
 
     @Resource
-    private MessageChannel output;
+    private MessageChannel output; //不能用带有大写字母的变量名，用了会报错，找不到对应的bean，不知道为什么
     @Override
     public String send() {
         String serial= UUID.randomUUID().toString();
