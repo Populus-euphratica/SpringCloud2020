@@ -13,6 +13,11 @@ spring:
     url: jdbc:mysql://localhost:3306/db2020?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     username: root
     password: 1234
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+    probability: 1
 #  &useSSL=false
 mybatis:
   mapperLocations: classpath:mapper/*.xml
