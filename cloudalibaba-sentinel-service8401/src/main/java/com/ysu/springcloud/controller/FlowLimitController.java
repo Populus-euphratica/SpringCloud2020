@@ -1,9 +1,14 @@
 package com.ysu.springcloud.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.ysu.springcloud.entitles.CommonResult;
+import com.ysu.springcloud.entitles.Payment;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 @RestController
@@ -33,4 +38,6 @@ public class FlowLimitController {
         int a=10/0;
         return "------testD";
     }
+
+
 }
