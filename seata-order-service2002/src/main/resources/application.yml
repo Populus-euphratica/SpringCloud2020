@@ -1,0 +1,50 @@
+server:
+  port: 2002
+
+spring:
+  application:
+    name: seata-storage-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/seata_storage?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+
+logging:
+  level:
+    io:
+      seata: info
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+
+seata:
+  #需要和nacos中配置保持一致
+  tx-service-group: my_test_tx_group
+  config:
+    type: nacos
+    nacos:
+      #需要和server在同一个注册中心下
+      serverAddr: 127.0.0.1:8848
+      #需要server端(registry和config)、nacos配置client端(registry和config)保持一致
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+  registry:
+    type: nacos
+    nacos:
+      #需要和server端保持一致，即server在nacos中的名称，默认为seata-server
+      application: seata-server
+      serverAddr: 127.0.0.1:8848
+      #需要server端(registry和config)、nacos配置client端(registry和config)保持一致
+      group: SEATA_GROUP
+      username: nacos
+      password: nacos
+  service:
+    vgroupMapping:
+      my_test_tx_group: ysu
+
